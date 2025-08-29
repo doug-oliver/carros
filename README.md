@@ -45,3 +45,26 @@ python manage.py runserver
 
 Agora acesse em: http://127.0.0.1:8000/
 
+Como Contribuir
+
+Contribuições são super bem-vindas!
+Para contribuir:
+
+Faça um fork do projeto 🍴
+
+Crie uma branch para sua feature/bugfix
+
+git checkout -b minha-feature
+
+
+Commit suas alterações
+
+git commit -m "Adiciona nova funcionalidade X"
+
+
+Faça push para a branch
+
+git push origin minha-feature
+
+
+Abra um Pull Request
