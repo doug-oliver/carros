@@ -7,7 +7,6 @@
 [![Contribuições](https://img.shields.io/badge/Contribuições-Bem--vindo-brightgreen)](#-como-contribuir)
 
 Um sistema simples e eficaz para **cadastro, visualização e gerenciamento de carros**, desenvolvido com **Python** e **HTML**.  
-Ideal para aprendizado de desenvolvimento web full-stack.  
 
 ---
 
