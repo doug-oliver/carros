@@ -21,19 +21,6 @@ Ideal para aprendizado de desenvolvimento web full-stack.
 
 ---
 
-## 📂 Estrutura do Projeto
-
-carros/
-├── accounts/ # Autenticação e gestão de usuários
-├── cars/ # Modelos e lógica de carros
-├── app/ # Configurações principais e templates
-├── media/cars/ # Armazenamento de imagens
-├── manage.py # CLI principal (Django)
-└── requirements.txt # Dependências do projeto
-
-
----
-
 ## Como rodar o projeto localmente
 
 1. Clone este repositório
