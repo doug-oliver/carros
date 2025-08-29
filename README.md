@@ -1,3 +1,5 @@
+
+````markdown
 # Projeto de Gerência de Carros
 
 [![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)](https://www.python.org/)
@@ -23,49 +25,70 @@ Ideal para aprendizado de desenvolvimento web full-stack.
 
 ## Como rodar o projeto localmente
 
-1. Clone este repositório
+### 1. Clone este repositório
 ```bash
 git clone https://github.com/doug-oliver/carros.git
 cd carros
+````
 
+### 2. Crie e ative o ambiente virtual
 
-2. Crie e ative o ambiente virtual
+```bash
 python -m venv venv
 source venv/bin/activate   # Linux/Mac
 venv\Scripts\activate      # Windows
+```
 
-3. Instale as dependências
+### 3. Instale as dependências
+
+```bash
 pip install -r requirements.txt
+```
 
-4. Execute as migrações
+### 4. Execute as migrações
+
+```bash
 python manage.py migrate
+```
 
-5. Inicie o servidor
+### 5. Inicie o servidor
+
+```bash
 python manage.py runserver
+```
 
-Agora acesse em: http://127.0.0.1:8000/
+Agora acesse em: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
+---
 
 ## Como Contribuir
 
 Contribuições são super bem-vindas!
 Para contribuir:
 
-Faça um fork do projeto 🍴
+1. Faça um fork do projeto 
+2. Crie uma branch para sua feature/bugfix:
 
-Crie uma branch para sua feature/bugfix
+   ```bash
+   git checkout -b minha-feature
+   ```
+3. Commit suas alterações:
 
-git checkout -b minha-feature
+   ```bash
+   git commit -m "Adiciona nova funcionalidade X"
+   ```
+4. Faça push para a branch:
 
+   ```bash
+   git push origin minha-feature
+   ```
+5. Abra um Pull Request 
 
-Commit suas alterações
+---
 
-git commit -m "Adiciona nova funcionalidade X"
+```
 
+---
 
-Faça push para a branch
-
-git push origin minha-feature
-
-
-Abra um Pull Request
+Quer que eu adicione também um **bloco de Estrutura do Projeto** (com árvore de pastas) pra ficar ainda mais completo?
+```
