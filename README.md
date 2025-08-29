@@ -1,5 +1,4 @@
 
-````markdown
 # Projeto de Gerência de Carros
 
 [![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)](https://www.python.org/)
@@ -22,7 +21,7 @@ Ideal para aprendizado de desenvolvimento web full-stack.
 - 🖼️ Upload e exibição de imagens dos carros  
 
 ---
-
+````
 ## Como rodar o projeto localmente
 
 ### 1. Clone este repositório
