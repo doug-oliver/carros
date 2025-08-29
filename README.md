@@ -45,7 +45,8 @@ python manage.py runserver
 
 Agora acesse em: http://127.0.0.1:8000/
 
-Como Contribuir
+
+## Como Contribuir
 
 Contribuições são super bem-vindas!
 Para contribuir:
