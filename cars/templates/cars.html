@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Catálogo de Carros{% endblock %}
+
+{% block content %}
+<h1 class="mb-4 text-center">Catálogo de Carros</h1>
+
+<!-- 🔎 Filtro / Busca -->
+<form method="get" class="mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="input-group shadow-sm">
+                <input type="text"
+                       name="search"
+                       class="form-control"
+                       placeholder="Pesquisar por modelo..."
+                       value="{{ request.GET.search }}">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-search me-1"></i> Buscar
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% if cars %}
+    <!-- 🏎️ Cards de Carros -->
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for car in cars %}
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0 rounded-3 overflow-hidden position-relative">
+                <a href="{% url 'car_detail' car.pk %}" class="stretched-link"></a> <!-- link cobre todo o card -->
+
+                {% if car.photo %}
+                    <img src="{{ car.photo.url }}" class="card-img-top" alt="{{ car.model }}">
+                {% else %}
+                    <img src="/media/cars/default_car.png" class="card-img-top" alt="Imagem indisponível">                
+                {% endif %}
+
+                <div class="card-body">
+                    <h5 class="card-title text-primary">{{ car.model }}</h5>
+                    <p class="card-text mb-1"><strong>Marca:</strong> {{ car.brand.name }}</p>
+                    <p class="card-text mb-1"><strong>Ano Fabricação:</strong> {{ car.factory_year }}</p>
+                    <p class="card-text mb-1"><strong>Ano Modelo:</strong> {{ car.model_year }}</p>
+                    <p class="card-text mb-1"><strong>Placa:</strong> {{ car.plate|default:"-" }}</p>
+                    <p class="card-text mb-1"><strong>Valor:</strong> 
+                        {% if car.value %}
+                            R$ {{ car.value|floatformat:2 }}
+                        {% else %}
+                            Não informado
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <div class="alert alert-warning text-center shadow-sm">Nenhum carro encontrado.</div>
+{% endif %}
+
+{% endblock %}

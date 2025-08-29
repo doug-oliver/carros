@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <style>
+    .car-card {
+      background-color: #e3e1e1;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      transition: all 0.3s ease;
+      max-width: 500px;
+      margin: 20px auto 20px auto;
+    }
+
+    .car-card:hover {
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .car-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .car-card h2 {
+      font-size: 1.5rem;
+      margin: 10px;
+    }
+
+    .car-card p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .buttons-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .error-message {
+      color: #d9534f;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    a {
+      text-decoration: none !important;
+    }
+  </style>
+
+  <div class="car-card">
+      {% if object.photo %}
+          <img src="{{ object.photo.url }}" class="card-img-top" alt="{{ object.model }}">
+      {% else %}
+          <img src="{% static 'media/cars/default_car.png' %}" class="card-img-top" alt="Imagem padrão">
+      {% endif %}
+      <h2>{{ object.brand }} {{ object.model }}</h2>
+      <p><strong>Ano de fabricação:</strong> {{ object.factory_year }}</p>
+      <p><strong>Ano do modelo:</strong> {{ object.model_year }}</p>
+      <p><strong>Placa:</strong> {{ object.plate }}</p>
+      <p><strong>Preço:</strong> R$ {{ object.value }}</p>
+      {% if object.bio %}
+        <p><strong>Bio:</strong> {{ object.bio|default:"-" }}</p>
+      {% endif %}
+  </div>
+
+  <div class="buttons-container">
+    <a href="{% url 'cars_list' %}" class="btn btn-primary btn-sm">Voltar</a>
+    {% if user.is_authenticated %}
+      <a href="{% url 'car_update' pk=object.pk %}" class="btn btn-primary btn-sm">Editar</a>
+      <a href="{% url 'car_delete' pk=object.pk %}" class="btn btn-danger btn-sm">Deletar</a>
+    {% endif %}
+  </div>
+{% endblock %}
