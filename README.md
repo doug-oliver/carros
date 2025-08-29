@@ -86,9 +86,3 @@ Para contribuir:
 
 ---
 
-```
-
----
-
-Quer que eu adicione também um **bloco de Estrutura do Projeto** (com árvore de pastas) pra ficar ainda mais completo?
-```
